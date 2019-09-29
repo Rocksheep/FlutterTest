@@ -1,10 +1,12 @@
 class Game {
   String _name;
   String _coverUrl;
+  String _summary;
 
-  Game(String name, String coverUrl) {
+  Game(String name, String summary, String coverUrl) {
     _name = name;
     _coverUrl = coverUrl;
+    _summary = summary;
   }
 
   String getName() {
@@ -15,6 +17,10 @@ class Game {
     return _coverUrl;
   }
 
+  String getSummary() {
+    return _summary;
+  }
+
   static Game fromJson(json) {
     var coverUrl = '';
     
@@ -22,6 +28,6 @@ class Game {
       coverUrl = 'https://images.igdb.com/igdb/image/upload/t_cover_big/'+json['cover']['image_id']+'.jpg';
     }
 
-    return Game(json['name'], coverUrl);
+    return Game(json['name'], json['summary'], coverUrl);
   }
 }

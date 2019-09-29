@@ -40,7 +40,7 @@ class Api {
     final response = await this._get(
       'games',
       queryParameters: {
-        'fields': 'name,rating,popularity,cover.image_id',
+        'fields': 'name,rating,popularity,cover.image_id,summary',
         'order': 'popularity:desc',
         'limit': limit.toString(),
         'offset': offset.toString(),
