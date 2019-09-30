@@ -44,6 +44,7 @@ class Api {
         'order': 'popularity:desc',
         'limit': limit.toString(),
         'offset': offset.toString(),
+        'filter[themes][not_eq]': '(42)',
       });
     
     List<Game> games = <Game>[];
